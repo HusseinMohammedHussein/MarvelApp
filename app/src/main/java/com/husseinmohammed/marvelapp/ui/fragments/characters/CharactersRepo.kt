@@ -1,6 +1,6 @@
 package com.husseinmohammed.marvelapp.ui.fragments.characters
 
-import com.husseinmohammed.marvelapp.data.pojos.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
 import com.husseinmohammed.marvelapp.data.restapi.retrofit.ApiClient
 import retrofit2.Call
 

@@ -21,9 +21,4 @@ class MainActivity : AppCompatActivity() {
 
         navController = Navigation.findNavController(this, R.id.nav_host)
     }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
 }

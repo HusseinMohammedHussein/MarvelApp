@@ -2,7 +2,7 @@ package com.husseinmohammed.marvelapp.ui.fragments.characters
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.husseinmohammed.marvelapp.data.pojos.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +23,7 @@ class CharactersViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<CharacterPojo>, t: Throwable) {
-                Timber.e("Characters::OnFailure::${t.localizedMessage}")
+                Timber.e("Characters::OnFailure::${t.message}")
             }
         })
 

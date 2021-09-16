@@ -12,7 +12,6 @@ import java.security.MessageDigest
 // Created by Hussein Mohammed on 9/13/2021.
 class HeaderInterceptor : Interceptor {
 
-
     private fun md5(input: String): String {
         val md = MessageDigest.getInstance("MD5")
         return BigInteger(1, md.digest(input.toByteArray())).toString(16).padStart(32, '0')
@@ -38,7 +37,7 @@ class HeaderInterceptor : Interceptor {
         httpUrlBuilder.addQueryParameter("apikey", publicKey)
         httpUrlBuilder.addQueryParameter("hash", hash)
 
-        Timber.d("HeaderInterceptor!!!!!ts::$ts, apiKey::$publicKey, hash::$hash")
+        Timber.d("HeaderInterceptor:::ts::$ts, apiKey::$publicKey, hash::$hash")
 
         requestBuilder.url(httpUrlBuilder.build())
         return chain.proceed(requestBuilder.build())
