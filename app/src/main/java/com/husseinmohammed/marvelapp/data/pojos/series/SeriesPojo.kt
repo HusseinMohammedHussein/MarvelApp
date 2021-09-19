@@ -10,7 +10,7 @@ data class SeriesPojo(
     ) {
         data class SeriesItemPojo(
             val title: String,
-            val thumbnail: SeriesImagePojo
+            val thumbnail: SeriesImagePojo?
         ) {
             data class SeriesImagePojo(
                 val path: String,

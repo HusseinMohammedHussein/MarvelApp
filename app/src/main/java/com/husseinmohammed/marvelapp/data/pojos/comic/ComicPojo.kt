@@ -10,8 +10,8 @@ data class ComicPojo(
     )
 
     data class ComicItemsPojo(
-        val thumbnail: ComicImagePojo,
-        val title: String
+        val title: String,
+        val thumbnail: ComicImagePojo?
     ) {
         data class ComicImagePojo(
             val path: String, val extension: String

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.fragments.characterdetails.chardetails.CharacterDetailsFragment">
+    tools:context=".ui.fragments.characterdetails.CharacterDetailsFragment">
 
     <ImageView
         android:id="@+id/iv_header_char"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/img_h_200"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,11 +19,12 @@
 
     <ImageView
         android:id="@+id/iv_back_button"
-        android:layout_width="40dp"
-        android:layout_height="32dp"
-        android:background="#7E000000"
+        android:layout_width="@dimen/img_w_70"
+        android:layout_height="@dimen/img_h_40"
+        android:padding="@dimen/p_10"
+        android:background="@drawable/bg_back_button"
         android:src="@drawable/ic_back"
-        app:layout_constraintBottom_toBottomOf="@id/iv_header_char"
+        android:layout_marginTop="@dimen/m_16"
         app:layout_constraintStart_toStartOf="@id/iv_header_char"
         app:layout_constraintTop_toTopOf="@id/iv_header_char" />
 
@@ -31,16 +32,35 @@
         android:id="@+id/ns_details_char"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingStart="@dimen/p_16"
+        android:paddingTop="@dimen/p_32"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_header_char">
+        app:layout_constraintTop_toBottomOf="@id/iv_header_char"
+        tools:ignore="RtlSymmetry">
 
         <include
             android:id="@+id/include_details_char"
-            layout="@layout/include_details_character"
+            layout="@layout/include_character_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/loader"
+        layout="@layout/view_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/grp_char_details"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="ns_details_char, iv_header_char, iv_back_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,21 @@
 package com.husseinmohammed.marvelapp.data.pojos.character
 
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
 // Created by Hussein Mohammed on 9/15/2021.
+@Parcelize
 data class CharacterItemPojo(
     val id: Int,
     val name: String,
     val description: String,
-    val thumbnail: ImagePojo,
-) {
-    class ImagePojo(
+    val thumbnail: ImagePojo?,
+) : Parcelable {
+
+    @Parcelize
+    data class ImagePojo(
         val path: String, val extension: String,
-    )
+    ) : Parcelable
 }
 

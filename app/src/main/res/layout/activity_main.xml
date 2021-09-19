@@ -9,8 +9,8 @@
     <fragment
         android:id="@+id/nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/navhost_w_0"
+        android:layout_height="@dimen/navhost_h_0"
         app:defaultNavHost="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"

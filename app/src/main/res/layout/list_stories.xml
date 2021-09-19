@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,24 +8,21 @@
         android:id="@+id/tv_stories_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stories"
-        android:textColor="#E27C81"
-        android:textSize="24sp"
+        android:text="@string/stories"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_24"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_stories"
+    <include
+        android:id="@+id/inc_recycler"
+        layout="@layout/view_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        tools:itemCount="1"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="@dimen/m_16"
         app:layout_constrainedHeight="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_stories_title"
-        tools:listitem="@layout/item_stories_list" />
+        app:layout_constraintTop_toBottomOf="@id/tv_stories_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">MarvelApp</string>
     <string name="ic_search_title">search</string>
+
+    <!-- Shared Keys -->
+    <string name="charItem">char_item</string>
+
+
+    <!-- Views Text -->
+    <string name="stories">Stories</string>
+    <string name="series">Series</string>
+    <string name="events">Events</string>
+    <string name="comics">Comics</string>
+    <string name="description">Description</string>
+    <string name="search_hint">Search for a character…</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Hint Text -->
+    <string name="description_hint">(We are sorry this Character is Haven\'t Description!)</string>
+    <string name="splash_title">Marvel App</string>
 </resources>

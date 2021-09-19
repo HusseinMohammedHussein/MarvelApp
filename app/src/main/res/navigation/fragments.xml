@@ -5,12 +5,11 @@
     android:id="@+id/fragments"
     app:startDestination="@id/charactersFragment">
 
-
     <fragment
         android:id="@+id/charactersFragment"
         android:name="com.husseinmohammed.marvelapp.ui.fragments.characters.CharactersFragment"
         android:label="fragment_characters"
-        tools:layout="@layout/fragment_characters" >
+        tools:layout="@layout/fragment_characters">
         <action
             android:id="@+id/action_charactersFragment_to_charactersSearchFragment"
             app:destination="@id/charactersSearchFragment" />
@@ -18,7 +17,7 @@
             android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
             app:destination="@id/characterDetailsFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/charactersSearchFragment"
         android:name="com.husseinmohammed.marvelapp.ui.fragments.chractersearch.CharactersSearchFragment"
         android:label="fragment_characters_search"
@@ -26,7 +25,7 @@
 
     <fragment
         android:id="@+id/characterDetailsFragment"
-        android:name="com.husseinmohammed.marvelapp.ui.fragments.characterdetails.chardetails.CharacterDetailsFragment"
+        android:name="com.husseinmohammed.marvelapp.ui.fragments.characterdetails.CharacterDetailsFragment"
         android:label="fragment_character_details"
         tools:layout="@layout/fragment_character_details" />
 </navigation>

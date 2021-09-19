@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -69,13 +71,21 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     // SpinKit Loader
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // Kotlin-Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+
+    // Splash
+    implementation 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
 }

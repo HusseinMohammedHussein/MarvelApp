@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navhost_w_0">0dp</dimen>
+    <dimen name="navhost_h_0">0dp</dimen>
+    <dimen name="m_16">16dp</dimen>
+    <dimen name="radius_16">16dp</dimen>
+    <dimen name="icon_24">24dp</dimen>
+    <dimen name="m_24">24dp</dimen>
+    <dimen name="p_16">16dp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="img_h_200">200dp</dimen>
+    <dimen name="img_w_70">70dp</dimen>
+    <dimen name="img_h_40">40dp</dimen>
+    <dimen name="p_10">10dp</dimen>
+    <dimen name="p_32">32dp</dimen>
+    <dimen name="img_w_90">90dp</dimen>
+    <dimen name="img_h_90">90dp</dimen>
+    <dimen name="img_h_160">160dp</dimen>
+    <dimen name="h_40">40dp</dimen>
+    <dimen name="m_8">8dp</dimen>
+    <dimen name="img_cv_w_120">120dp</dimen>
+    <dimen name="img_cv_h_200">200dp</dimen>
+    <dimen name="item_title_w_120">120dp</dimen>
+    <dimen name="p_8">8dp</dimen>
+</resources>
