@@ -48,9 +48,9 @@ class CharactersSearchFragment : BottomSheetDialogFragment() {
             val bottomSheetDialog = it as BottomSheetDialog
             val parentLayout =
                 bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
-            parentLayout?.let { it ->
-                val behaviour = BottomSheetBehavior.from(it)
-                setupFullHeight(it)
+            parentLayout?.let { parent ->
+                val behaviour = BottomSheetBehavior.from(parent)
+                setupFullHeight(parent)
                 behaviour.state = BottomSheetBehavior.STATE_EXPANDED
             }
         }
@@ -86,12 +86,7 @@ class CharactersSearchFragment : BottomSheetDialogFragment() {
 
     private fun methods() {
         initSearchEditText()
-        init()
         onClick()
-    }
-
-    private fun init() {
-
     }
 
     private fun initSearchEditText() {

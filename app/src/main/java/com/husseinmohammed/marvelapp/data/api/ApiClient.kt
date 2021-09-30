@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 // Created by Hussein Mohammed on 9/13/2021.
 object ApiClient {
     private const val BASE_URL =
-        "https://gateway.marvel.com:443/"
+        "https://gateway.marvel.com:443/v1/public/"
     private var okHttpClient: OkHttpClient = OkHttpClient()
     private const val REQUEST_TIMEOUT: Int = 60
 

@@ -23,9 +23,9 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import timber.log.Timber
 
+@SuppressLint("NotifyDataSetChanged")
 @ExperimentalCoroutinesApi
 @FlowPreview
-@SuppressLint("NotifyDataSetChanged")
 class CharactersFragment : Fragment() {
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
@@ -137,7 +137,6 @@ class CharactersFragment : Fragment() {
             findNavController().navigate(R.id.action_charactersFragment_to_charactersSearchFragment)
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
