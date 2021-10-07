@@ -11,14 +11,16 @@ import com.bumptech.glide.Glide
 import com.husseinmohammed.marvelapp.R
 import com.husseinmohammed.marvelapp.data.api.ApiClient
 import com.husseinmohammed.marvelapp.data.api.ApiHelperImpl
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterItemPojo
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo
-import com.husseinmohammed.marvelapp.data.pojos.event.EventPojo
-import com.husseinmohammed.marvelapp.data.pojos.series.SeriesPojo
-import com.husseinmohammed.marvelapp.data.pojos.story.StoryPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterItemPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.comic.ComicPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.event.EventPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.series.SeriesPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.story.StoryPojo
+import com.husseinmohammed.marvelapp.data.local.DatabaseBuilder
+import com.husseinmohammed.marvelapp.data.local.DatabaseHelperImpl
 import com.husseinmohammed.marvelapp.databinding.FragmentCharacterDetailsBinding
-import com.husseinmohammed.marvelapp.ui.activity.MainActivity
+import com.husseinmohammed.marvelapp.ui.MainActivity
 import com.husseinmohammed.marvelapp.ui.adapters.ComicsAdapter
 import com.husseinmohammed.marvelapp.ui.adapters.EventsAdapter
 import com.husseinmohammed.marvelapp.ui.adapters.SeriesAdapter
@@ -75,7 +77,10 @@ class CharacterDetailsFragment : Fragment() {
     private fun setViewModel() {
         viewModel = ViewModelProviders.of(
             this,
-            ViewModelFactory(ApiHelperImpl(ApiClient.apiServer))
+            ViewModelFactory(
+                ApiHelperImpl(ApiClient.apiServer),
+                DatabaseHelperImpl(DatabaseBuilder.getInstance(requireContext()))
+            )
         ).get(CharacterDetailsViewModel::class.java)
     }
 

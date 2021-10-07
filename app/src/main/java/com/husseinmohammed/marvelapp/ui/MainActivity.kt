@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.ui.activity
+package com.husseinmohammed.marvelapp.ui
 
 import android.os.Bundle
 import android.view.Menu

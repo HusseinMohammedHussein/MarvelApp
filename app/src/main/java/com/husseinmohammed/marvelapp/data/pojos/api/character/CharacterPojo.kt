@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.data.pojos.character
+package com.husseinmohammed.marvelapp.data.pojos.api.character
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -10,7 +10,6 @@ data class CharacterPojo(
 ) {
 
     data class CharacterDataPojo(
-        @SerializedName("results") @Expose val characterResults: ArrayList<CharacterItemPojo>,
-
-        )
+        @SerializedName("results") @Expose val characterResults: List<CharacterItemPojo>
+    )
 }

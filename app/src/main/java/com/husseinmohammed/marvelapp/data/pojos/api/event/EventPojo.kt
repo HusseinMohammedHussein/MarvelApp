@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.data.pojos.event
+package com.husseinmohammed.marvelapp.data.pojos.api.event
 
 data class EventPojo(
     val data: EventsDataPojo

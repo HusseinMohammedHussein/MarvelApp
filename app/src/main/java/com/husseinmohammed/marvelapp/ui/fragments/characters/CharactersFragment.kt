@@ -13,9 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.husseinmohammed.marvelapp.R
 import com.husseinmohammed.marvelapp.data.api.ApiClient
 import com.husseinmohammed.marvelapp.data.api.ApiHelperImpl
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.local.DatabaseBuilder
+import com.husseinmohammed.marvelapp.data.local.DatabaseHelperImpl
+import com.husseinmohammed.marvelapp.data.pojos.local.CharacterLocalPojo
 import com.husseinmohammed.marvelapp.databinding.FragmentCharactersBinding
 import com.husseinmohammed.marvelapp.ui.adapters.CharactersAdapter
+import com.husseinmohammed.marvelapp.utils.CheckInternetConnection
 import com.husseinmohammed.marvelapp.utils.InfiniteScrollListener
 import com.husseinmohammed.marvelapp.utils.Status
 import com.husseinmohammed.marvelapp.utils.ViewModelFactory
@@ -35,6 +38,7 @@ class CharactersFragment : Fragment() {
 
     private val defaultLimit = 10
     private var countLimit = 0
+    private var isInternetConnect = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,11 +69,16 @@ class CharactersFragment : Fragment() {
         charactersViewModel =
             ViewModelProviders.of(
                 this,
-                ViewModelFactory(ApiHelperImpl(ApiClient.apiServer))
+                ViewModelFactory(
+                    ApiHelperImpl(ApiClient.apiServer),
+                    DatabaseHelperImpl(DatabaseBuilder.getInstance(requireContext()))
+                )
             ).get(CharactersViewModel::class.java)
     }
 
     private fun init() {
+        isInternetConnect = CheckInternetConnection.isInternetAvailable(requireContext())
+        Timber.d("checkInterConnect::$isInternetConnect")
         charactersAdapter = CharactersAdapter(requireContext())
         val layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -87,7 +96,7 @@ class CharactersFragment : Fragment() {
     }
 
     private fun requests() {
-        charactersViewModel.getCharacters(defaultLimit)
+        charactersViewModel.getCharacters(defaultLimit, isInternetConnect)
     }
 
     private fun responseCharacters() {
@@ -95,7 +104,7 @@ class CharactersFragment : Fragment() {
             when (characters.status) {
                 Status.SUCCESS -> {
                     characters.data?.let { char ->
-                        charactersAdapter.addData(char.characterData.characterResults)
+                        charactersAdapter.addData(char)
                         updateIndexesForRequests(charactersAdapter, char)
                         charactersAdapter.notifyDataSetChanged()
 
@@ -119,14 +128,14 @@ class CharactersFragment : Fragment() {
     }
 
     private fun loadMoreCharacters() {
-        charactersViewModel.getCharacters(countLimit + defaultLimit)
+        charactersViewModel.getCharacters(countLimit + defaultLimit, isInternetConnect)
     }
 
     private fun updateIndexesForRequests(
         adapter: CharactersAdapter,
-        response: CharacterPojo
+        response: List<CharacterLocalPojo>
     ) {
-        adapter.addData(response.characterData.characterResults)
+        adapter.addData(response)
         Timber.d("CountLimit::$countLimit")
         adapter.notifyItemRangeChanged(countLimit, countLimit + defaultLimit)
         countLimit += defaultLimit

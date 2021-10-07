@@ -15,7 +15,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.husseinmohammed.marvelapp.R
 import com.husseinmohammed.marvelapp.data.api.ApiClient
 import com.husseinmohammed.marvelapp.data.api.ApiHelperImpl
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.local.DatabaseBuilder
+import com.husseinmohammed.marvelapp.data.local.DatabaseHelperImpl
 import com.husseinmohammed.marvelapp.databinding.FragmentCharactersSearchBinding
 import com.husseinmohammed.marvelapp.ui.adapters.CharacterSearchAdapter
 import com.husseinmohammed.marvelapp.utils.Status
@@ -80,7 +82,10 @@ class CharactersSearchFragment : BottomSheetDialogFragment() {
         viewModel =
             ViewModelProviders.of(
                 this,
-                ViewModelFactory(ApiHelperImpl(ApiClient.apiServer))
+                ViewModelFactory(
+                    ApiHelperImpl(ApiClient.apiServer),
+                    DatabaseHelperImpl(DatabaseBuilder.getInstance(requireContext()))
+                )
             ).get(CharactersSearchViewModel::class.java)
     }
 
@@ -124,8 +129,8 @@ class CharactersSearchFragment : BottomSheetDialogFragment() {
     }
 
     private fun renderSearchResult(result: CharacterPojo) {
-        charSearchAdapter =
-            CharacterSearchAdapter(requireContext(), result.characterData.characterResults)
+//        charSearchAdapter =
+//            CharacterSearchAdapter(requireContext(), result.characterData.characterResults)
         binding.inc.rvSearchResult.apply {
             setHasFixedSize(true)
             adapter = charSearchAdapter

@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.husseinmohammed.marvelapp.R
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo.ComicItemsPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.comic.ComicPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.comic.ComicPojo.ComicItemsPojo
 import com.husseinmohammed.marvelapp.databinding.ItemListBinding
 import com.husseinmohammed.marvelapp.utils.ImageType
 

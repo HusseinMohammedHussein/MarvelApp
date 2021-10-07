@@ -1,10 +1,10 @@
 package com.husseinmohammed.marvelapp.data.api
 
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo
-import com.husseinmohammed.marvelapp.data.pojos.event.EventPojo
-import com.husseinmohammed.marvelapp.data.pojos.series.SeriesPojo
-import com.husseinmohammed.marvelapp.data.pojos.story.StoryPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.comic.ComicPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.event.EventPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.series.SeriesPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.story.StoryPojo
 import kotlinx.coroutines.flow.Flow
 
 

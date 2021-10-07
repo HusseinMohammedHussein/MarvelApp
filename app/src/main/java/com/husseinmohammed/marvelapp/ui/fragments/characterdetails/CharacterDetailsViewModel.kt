@@ -4,11 +4,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.husseinmohammed.marvelapp.data.api.ApiHelper
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterPojo
-import com.husseinmohammed.marvelapp.data.pojos.comic.ComicPojo
-import com.husseinmohammed.marvelapp.data.pojos.event.EventPojo
-import com.husseinmohammed.marvelapp.data.pojos.series.SeriesPojo
-import com.husseinmohammed.marvelapp.data.pojos.story.StoryPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.comic.ComicPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.event.EventPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.series.SeriesPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.story.StoryPojo
 import com.husseinmohammed.marvelapp.utils.Resource
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect

@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.data.pojos.character
+package com.husseinmohammed.marvelapp.data.pojos.api.character
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

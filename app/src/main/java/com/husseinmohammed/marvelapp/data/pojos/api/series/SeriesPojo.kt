@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.data.pojos.series
+package com.husseinmohammed.marvelapp.data.pojos.api.series
 
 
 // Created by Hussein Mohammed on 9/16/2021.

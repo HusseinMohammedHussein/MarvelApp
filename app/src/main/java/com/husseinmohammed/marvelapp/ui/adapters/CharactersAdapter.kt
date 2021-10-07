@@ -9,7 +9,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.husseinmohammed.marvelapp.R
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterItemPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterItemPojo
+import com.husseinmohammed.marvelapp.data.pojos.local.CharacterLocalPojo
 import com.husseinmohammed.marvelapp.databinding.ItemCharacterListBinding
 import com.husseinmohammed.marvelapp.utils.ImageType
 import timber.log.Timber
@@ -19,9 +20,9 @@ import timber.log.Timber
 class CharactersAdapter(var context: Context) :
     RecyclerView.Adapter<CharactersAdapter.CharacterViewHolder>() {
 
-    var characters: ArrayList<CharacterItemPojo> = arrayListOf()
+    var characters: List<CharacterLocalPojo> = arrayListOf()
 
-    fun addData(chars: ArrayList<CharacterItemPojo>) {
+    fun addData(chars: List<CharacterLocalPojo>) {
         characters = chars
         notifyDataSetChanged()
     }
@@ -47,14 +48,14 @@ class CharactersAdapter(var context: Context) :
         private val bundle = Bundle()
 
 
-        fun bind(mCharacterPojo: CharacterItemPojo) {
+        fun bind(mCharacterPojo: CharacterLocalPojo) {
             binding.tvCharacterName.text = mCharacterPojo.name
             Timber.d("CharacterName::${mCharacterPojo.name}")
-            val image =
-                "${mCharacterPojo.thumbnail?.path}${ImageType.IMAGE_TYPE}${mCharacterPojo.thumbnail?.extension}"
-            Timber.d("CharacterImage::$image")
+//            val image =
+//                "${mCharacterPojo.thumbnail?.path}${mCharacterPojo.thumbnail}"
+//            Timber.d("CharacterImage::$image")
             Glide.with(context)
-                .load(image)
+                .load(mCharacterPojo.thumbnail)
                 .error(R.drawable.image_placeholder)
                 .placeholder(R.drawable.image_placeholder)
                 .into(binding.ivCharacter)

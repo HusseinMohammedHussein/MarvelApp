@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.husseinmohammed.marvelapp.R
-import com.husseinmohammed.marvelapp.data.pojos.character.CharacterItemPojo
+import com.husseinmohammed.marvelapp.data.pojos.api.character.CharacterItemPojo
 import com.husseinmohammed.marvelapp.databinding.ItemCharSearchBinding
 import com.husseinmohammed.marvelapp.utils.ImageType
 

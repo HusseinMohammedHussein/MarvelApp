@@ -1,4 +1,4 @@
-package com.husseinmohammed.marvelapp.data.pojos.story
+package com.husseinmohammed.marvelapp.data.pojos.api.story
 
 data class StoryPojo(
     val data: StoryDataPojo

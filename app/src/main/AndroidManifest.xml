@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.husseinmohammed.marvelapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,10 +19,10 @@
         tools:ignore="AllowBackup"
         tools:targetApi="m">
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.Splash"
             android:exported="true" />
         <activity
-            android:name=".ui.Splash"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
